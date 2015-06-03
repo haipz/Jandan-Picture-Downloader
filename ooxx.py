@@ -9,7 +9,9 @@
 import urllib2, os, re, thread, time
 
 def getHtml(url) :
-    page = urllib2.urlopen(url)
+    hdr = {'User-Agent':'Mozilla/5.0'}
+    req = urllib2.Request(url, headers=hdr)
+    page = urllib2.urlopen(req)
     html = page.read()
     return html
 
