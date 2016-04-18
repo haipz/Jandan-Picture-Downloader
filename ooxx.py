@@ -4,6 +4,9 @@
     site    : haipz.com
     email   : i@haipz.com
 
+modified by TC
+oo xx indexes are included.
+
 '''
 
 import urllib2, os, re, thread, time
@@ -36,6 +39,8 @@ def downloadPicture(picurl, picpath, picname) :
 choice = int(input("0. ooxx 1. pic : "))
 pagestart = int(input("page start: "))
 pageend = int(input("page end: "))
+ooover = int(input("at least how many oo: "))
+xxbelow = int(input("at most how many xx: "))
 
 if choice == 0 :
     dirname = "ooxx"
@@ -77,17 +82,17 @@ for pagenum in range(pagestart, pageend) :
 
         count1 = 0
         for pic in result :
-            count1 = count1 + 1
-            picurl = pic[0] + pic[1]
-            picpath = path + '/'
-            picname = str(pagenum) + '_oo' + oo + '_xx' + xx + '_' + str(count0) + '_' + str(count1) + pic[1]
+            if int(oo) > ooover and int(xx) < xxbelow:
+                count1 = count1 + 1
+                picurl = pic[0] + pic[1]
+                picpath = path + '/'
+                picname = str(pagenum) + '_oo' + oo + '_xx' + xx + '_' + str(count0) + '_' + str(count1) + pic[1]
 
-            print 'Infomation:'
-            print 'Picture url: ' + picurl
-            print 'Picture path: ' + picpath
-            print 'Picture name: ' + picname
-
-            try :
-                downloadPicture(picurl, picpath, picname)
-            except Exception as e :
-                print(e)
+                print 'Infomation:'
+                print 'Picture url: ' + picurl
+                print 'Picture path: ' + picpath
+                print 'Picture name: ' + picname
+                try :
+                    downloadPicture(picurl, picpath, picname)
+                except Exception as e :
+                    print(e)
