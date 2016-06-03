@@ -76,7 +76,7 @@ for pagenum in range(pagestart, pageend) :
         oo = re.search(oopattern, match).group(1)
         xx = re.search(xxpattern, match).group(1)
 
-        picpattern = ur'(?:src=")([\s\S]*?)(.jpg|.png|.gif)'
+        picpattern = ur'(?:href=")(http\:\/\/w[\s\S]*?)(.jpg|.png|.gif)'
         picobj = re.compile(picpattern)
         result = picobj.findall(match)
 
