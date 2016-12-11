@@ -2,7 +2,7 @@
 
 ## Warning
 
-Just for studying. Please don't consume **Jandan** too much network traffic.
+Just for studying. Please don't consume `Jandan` too much network traffic.
 
 ## Run
 
